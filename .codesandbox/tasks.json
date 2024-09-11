@@ -19,18 +19,15 @@
     },
     "build": {
       "name": "build",
-      "command": "yarn run build",
-      "runAtStart": false
+      "command": "yarn run build"
     },
     "start": {
       "name": "start",
-      "command": "yarn run start",
-      "runAtStart": false
+      "command": "yarn run start"
     },
     "lint": {
       "name": "lint",
-      "command": "yarn run lint",
-      "runAtStart": false
+      "command": "yarn run lint"
     },
     "install": {
       "name": "install dependencies",
