@@ -20,13 +20,6 @@ export default function Error() {
             <span className="loading loading-infinity loading-lg text-warning"></span>
             <span className="loading loading-infinity loading-lg text-error"></span>
           </p>
-          <button
-            className="btn btn-primary"
-            type="button"
-            onClick={() => router.push("/")}
-          >
-            Home
-          </button>
         </div>
       </div>
     </div>

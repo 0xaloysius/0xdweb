@@ -1,15 +1,19 @@
 "use client";
-import UDLogo from "components/udlogo";
+
+import { useRouter } from "next/navigation";
 import UAuth from "@uauth/js";
 import { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
+
 const uauth = new UAuth({
   clientID: process.env.NEXT_PUBLIC_clientID,
   redirectUri: process.env.NEXT_PUBLIC_redirectUri,
   scope: "openid wallet messaging:notifications:optional",
 });
 
-const HeaderLogin = () => {
+export default function HeaderLogin() {
+  //= () => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
   const [user, setUser] = useState();
@@ -89,19 +93,19 @@ const HeaderLogin = () => {
         </div>
         <ul
           tabIndex={0}
-          className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+          className="absolute mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box max-w-52"
         >
           <li>
             <h2 className="mx-auto py-2">{user.sub}</h2>
-            <p className="text-center text-xs mx-auto text-info">
-              {user.wallet_address}
+            <p className="truncate text-xs text-info max-w-40">
+              Address:{user.wallet_address}
+              <span>...</span>
             </p>
-            <p className="text-center text-xs mx-auto text-info">{user.sub}</p>
           </li>
           <li>
             <a className="justify-between">
-              Profile
-              <span className="badge">New</span>
+              CHAT
+              <span className="badge">CHAT</span>
             </a>
           </li>
           <li>
@@ -110,7 +114,7 @@ const HeaderLogin = () => {
           <li>
             <button
               onClick={handleLogout}
-              className="btn btn-block btn-secondary font-bold uppercase btn-wide px-2"
+              className="btn btn-block bg-[#0D67FE] hover:bg-[#0546B7] focus:btn-[#478BFE]  font-bold uppercase btn-wide px-2"
             >
               <svg height="2em" viewBox="0 0 40 40">
                 <path
@@ -135,29 +139,35 @@ const HeaderLogin = () => {
       onClick={handleLogin}
       className="btn bg-[#0D67FE] hover:bg-[#0546B7] focus:btn-[#478BFE] font-bold uppercase h-12 px-2 btn-wide"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-      >
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M23 2.34473V9.93093L1 18.8965L23 2.34473Z"
-          fill="#2FE9FF"
-        />
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M18.875 2V15.1034C18.875 18.9123 15.797 22 12 22C8.20304 22 5.125 18.9123 5.125 15.1034V9.58621L9.25 7.31034V15.1034C9.25 16.4365 10.3273 17.5172 11.6562 17.5172C12.9852 17.5172 14.0625 16.4365 14.0625 15.1034V4.65517L18.875 2Z"
-          fill="white"
-        />
-      </svg>
+      <UDLogo />
       <span className="text-white uppercase">Connect</span>
     </button>
   );
-};
+}
 
-export default HeaderLogin;
+//export default HeaderLogin;
+
+function UDLogo() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M23 2.34473V9.93093L1 18.8965L23 2.34473Z"
+        fill="#2FE9FF"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M18.875 2V15.1034C18.875 18.9123 15.797 22 12 22C8.20304 22 5.125 18.9123 5.125 15.1034V9.58621L9.25 7.31034V15.1034C9.25 16.4365 10.3273 17.5172 11.6562 17.5172C12.9852 17.5172 14.0625 16.4365 14.0625 15.1034V4.65517L18.875 2Z"
+        fill="white"
+      />
+    </svg>
+  );
+}

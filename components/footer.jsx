@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Contactcal from "components/contactcal";
 export default function Footer(props) {
   return (
     <div className="btm-nav py-4">
@@ -14,10 +13,9 @@ export default function Footer(props) {
                 target="_blank"
                 className="font-bold text-primary uppercase px-1"
               >
-                0xdweb
+                0x<span className="text-white">dweb</span>
               </Link>
-              |
-              <Contactcal />
+              | CONTACT
             </div>
           </div>
         </div>
