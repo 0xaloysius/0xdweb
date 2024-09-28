@@ -17,9 +17,7 @@ const Header = () => (
       </div>
     </div>
 
-    <div className="dropdown dropdown-end">
-      <HeaderLogin />
-    </div>
+    <div className="dropdown dropdown-end"><HeaderLogin/></div>
   </div>
 );
 
