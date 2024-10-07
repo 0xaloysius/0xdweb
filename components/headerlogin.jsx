@@ -1,51 +1,22 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 
 import { useConnectWallet, useWallets } from "@web3-onboard/react";
 import { ethers } from "ethers";
-//import PushProfile from "./pushprofile"; //<PushProfile />
-import PushWidget from "./pushwidget"; //<PushWidget />
 
-export default function HeaderLogin() {
+export default function OnBoard() {
   const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
   const [address, setAddress] = useState();
   const connectedWallets = useWallets();
 
-  const [signer, setSigner] = useState(null);
-
-  const connectWallet = async () => {
-    const signer = { ethers };
-    connect();
-    // store signer
-    setSigner(signer);
-  };
-
-  const disconnectWallet = async () => {
-    setSigner(null);
-  };
-
   return (
-    <>
-      {signer ? <PushWidget /> : <></>}
-      <div
-        className="btn btn-primary btn-wide font-bold"
-        disabled={connecting}
-        onClick={signer ? disconnectWallet : connectWallet}
+    <div className="container">
+      <button
+        className="btn btn-primary font-bold"
+        onClick={() => (wallet ? disconnect(wallet) : connect())}
       >
-        {signer ? "Disconnect" : "Connect To Chat"}
-      </div>
-    </>
+        {connecting ? "CONNECTING" : wallet ? "DISCONNECT" : "CONNECT"}
+      </button>
+    </div>
   );
-}
-
-{
-  /*    <div
-className="btn btn-primary btn-wide font-bold"
-disabled={connecting}
-onClick={signer ? disconnectWallet : connectWallet}
->
-{signer ? "Disconnect wallet" : "Connect Wallet"}
-</div>
-*/
 }

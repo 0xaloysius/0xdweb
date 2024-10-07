@@ -1,5 +1,5 @@
-"use client";
 import { ChatWidget } from "@pushprotocol/uiweb";
+import { ethers } from "ethers";
 export default function PushWidgte() {
   const pushchatid =
     //process.env.pushchatid ||

@@ -12,10 +12,12 @@ export default function Home() {
     >
       <div className="hero-content text-center align-middle">
         <div className="max-w-lg">
-          <h1 className="text-6xl">0x dweb</h1>
-          <h2 className="py-4 text-4xl text-secondary">decentralized dapps</h2>
-          <p className="py-4 text-sm text-info">
-            WEB3 Onboarding With The 0xdweb Community.
+          <h1 className="text-6xl text-base-100 font-bold">0x DWEB</h1>
+          <h2 className="py-4 text-4xl text-secondary uppercase">
+            Decentralized apps & communications.
+          </h2>
+          <p className="py-4 text-sm text-white">
+            WEB3 Onboard With The 0xDWEB Community.
           </p>
         </div>
       </div>

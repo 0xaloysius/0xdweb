@@ -4,7 +4,6 @@ import walletConnectModule from "@web3-onboard/walletconnect";
 import uauthModule from "@web3-onboard/uauth";
 import { init } from "@web3-onboard/react";
 import unstoppableResolution from "@web3-onboard/unstoppable-resolution";
-
 import Logo from "@/components/logo";
 //import Resolution from '@unstoppabledomains/resolution';
 
@@ -91,12 +90,12 @@ export default init({
   accountCenter: {
     desktop: {
       position: "topRight",
-      enabled: false,
+      enabled: true,
       minimal: true,
     },
     mobile: {
       position: "topRight",
-      enabled: false,
+      enabled: true,
       minimal: true,
     },
   },
@@ -127,8 +126,8 @@ export default init({
     // Optional - but allows for dapps to require users to agree to TOS and privacy policy before connecting a wallet
     agreement: {
       version: "1.0.0",
-      termsUrl: "https://lexingtontech.us/terms",
-      privacyUrl: "https://lexingtontech.us/privacy",
+      termsUrl: "https://0xdweb.com/terms",
+      privacyUrl: "https://0xdweb.com/privacy",
     },
   },
   // example customising copy
