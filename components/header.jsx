@@ -1,27 +1,38 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import HeaderLogin from "./headerlogin";
+//import Connect from "./connectrainbow";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const logoImage = ({ src, width, quality }) => {
   return `https://localhost:3000/${src}?w=${width}&q=${quality || 75}`;
 };
 
-const Header = () => (
-  <div className="navbar flex justify-between px-4 whitespace-normal uppercase h-12">
-    <div className="flex-1">
-      <div className="size-12">
-        <Link href="/">
-          <Logo />
-        </Link>
+export default function Header() {
+  return (
+    <div className="navbar flex justify-between px-4 whitespace-normal uppercase h-12">
+      <div className="flex-1">
+        <div className="size-12">
+          <Link href="/">
+            <Logo />
+          </Link>
+        </div>
+      </div>
+
+      <div className="dropdown dropdown-end">
+        <ConnectButton
+          label="CONNECT"
+          accountStatus={{
+            smallScreen: "avatar",
+            largeScreen: "full",
+          }}
+          showBalance={false}
+          chainStatus="none"
+        />
       </div>
     </div>
-
-    <div className="dropdown dropdown-end"><HeaderLogin/></div>
-  </div>
-);
-
-export default Header;
+  );
+}
 
 function Logo() {
   return (

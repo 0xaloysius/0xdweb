@@ -1,6 +1,6 @@
 import { Noto_Sans_Mono } from "next/font/google";
-import "/styles/globals.css";
-import { Providers } from "./providers";
+import "./globals.css";
+import { Providers } from "./providersonboard";
 
 import Header from "components/header";
 import Footer from "components/footer";
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <body>
         <Providers>
           <Header />
-          <main>{children}</main>
+          {children}
           <Footer />
         </Providers>
       </body>

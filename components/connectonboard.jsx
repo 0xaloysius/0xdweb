@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useConnectWallet, useWallets } from "@web3-onboard/react";
 import { ethers } from "ethers";
 
-export default function OnBoard() {
+export default function ConnectOnBoard() {
   const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
   const [address, setAddress] = useState();
   const connectedWallets = useWallets();

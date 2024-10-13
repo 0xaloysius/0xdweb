@@ -11,7 +11,7 @@ const uauth = new UAuth({
   scope: "openid wallet messaging:notifications:optional",
 });
 
-export default function HeaderLogin() {
+export default function UD() {
   //= () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -130,6 +130,7 @@ export default function HeaderLogin() {
             </button>
           </li>
         </ul>
+        Connect
       </div>
     );
   }

@@ -2,18 +2,18 @@
 import { useEffect, useState } from "react";
 import { ChatUIProvider, ChatWidget, darkChatTheme } from "@pushprotocol/uiweb";
 import { ethers } from "ethers";
-import { useConnectWallet, useWallets } from "@web3-onboard/react";
+//import { useConnectWallet, useWallets } from "@web3-onboard/react";
 
 import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 //import PushWidget from "components/pushwidget";
 //import PushProfile from "components/pushprofile";
 //import PushSupport from "components/pushsupport";
 
-export function PushProvider({ children }) {
-  const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
-  const [address, setAddress] = useState();
-  const connectedWallets = useWallets();
-  const [walletstatus, setWalletStatus] = useState();
+export function ProvidersPush({ children }) {
+  //const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
+  //const [address, setAddress] = useState();
+  //const connectedWallets = useWallets();
+  //const [walletstatus, setWalletStatus] = useState();
   const pushchatid =
     //process.env.pushchatid ||
     "0x283A6f1D0974e10c20047480dA08FB2874911504";
