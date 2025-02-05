@@ -7,15 +7,15 @@ export default function Home() {
       className="hero min-h-screen"
       style={{
         backgroundImage:
-          "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+          "url(https://doodleipsum.com/700/outline?i=f04b406cfb99d08a441a1fbb4257cde2)",
       }}
     >
-      <div className="hero-content text-center align-middle">
-        <div className="max-w-lg">
+      <div className="hero-content text-right align-right">
+        <div className="max-w-md">
           <h1 className="text-6xl">0x dweb</h1>
           <h2 className="py-4 text-4xl text-secondary">decentralized dapps</h2>
           <p className="py-4 text-sm text-info">
-            WEB3 Onboarding With The 0xdweb Community.
+            Building WEB3 eCommerce Marketplace With 0x Communities.
           </p>
         </div>
       </div>

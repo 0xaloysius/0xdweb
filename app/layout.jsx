@@ -1,15 +1,9 @@
-import { Noto_Sans_Mono } from "next/font/google";
-import "/styles/globals.css";
+import { GeistMono } from 'geist/font/mono'
+import "./globals.css";
 import { Providers } from "./providers";
 
 import Header from "components/header";
 import Footer from "components/footer";
-
-const nsm = Noto_Sans_Mono({
-  weight: ["400", "600"],
-  style: ["normal"],
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "0XDWEB",
@@ -18,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={nsm.className}>
+    <html lang="en" className={GeistMono.className}>
       <body>
         <Providers>
           <Header />

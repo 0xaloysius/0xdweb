@@ -3,7 +3,6 @@ import web3Onboard from "../context/web3onboard";
 import { Web3OnboardProvider } from "@web3-onboard/react";
 import { ChatUIProvider, darkChatTheme } from "@pushprotocol/uiweb";
 import { ethers } from "ethers";
-import { ThemeProvider } from "next-themes";
 
 import { useEffect, useState } from "react";
 import * as PushAPI from "@pushprotocol/restapi";
@@ -46,7 +45,7 @@ export function Providers({ children }) {
         env={env}
         pgpPrivatekey={setPvtKey}
       >
-        <ThemeProvider defaultTheme="dweb">{children}</ThemeProvider>
+        {children}
       </ChatUIProvider>
     </Web3OnboardProvider>
   );
