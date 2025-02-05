@@ -1,7 +1,7 @@
 import { GeistMono } from 'geist/font/mono'
 import "./globals.css";
 import { Providers } from "./providers";
-
+import { Analytics } from '@vercel/analytics/next';
 import Header from "components/header";
 import Footer from "components/footer";
 
@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
           <Footer />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
